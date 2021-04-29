@@ -1,0 +1,856 @@
+//////////////////////
+
+/* common */
+
+//////////////////////
+
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+$h2-color: rgb(5, 51, 80);
+$h4-color: rgb(5, 62, 102);
+$text-color: rgb(34,34,34);
+$text-light-color: rgb(124, 124, 124);
+$white-color: rgb(255,255,255);
+$white-rgba7-color: rgba(255,255,255,0.7);
+$gray-rgba5-color: rgba(240,240,240,0.5);
+$shadow-color: rgb(68, 68, 68);
+$ivory-color:rgb(242,252,255);
+$hover-color: rgb(86, 145, 180);
+$border-color:rgb(23, 78, 129);
+$borderg-color :rgb(163, 163, 163);
+
+@mixin tl-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+@mixin t-center {
+    top: 50%;
+    transform: translate(0,-50%);
+}
+@mixin l-center {
+    left: 50%;
+    transform: translate(-50%,0);
+}
+@mixin bp_xl {
+    @media screen and (max-width:1000px){
+    @content;
+}
+}
+@mixin bp_large {
+    @media screen and (max-width:800px){
+    @content;
+}
+}
+@mixin bp_mid {
+    @media screen and (max-width:600px){
+    @content;
+}
+}
+@mixin bp_small {
+    @media screen and (max-width:400px){
+    @content;
+}
+}
+
+
+
+html {
+    font: 62.5%  "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+}
+
+body {
+    font-size: 1.6rem;
+    
+}
+
+header {
+    width: 100%;
+    background-image: url(../img/header.png);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 167px);
+    position: relative;   
+}
+h1 {
+    width: 100%;
+    height: 100%;
+    a {
+        position: relative;
+        z-index: 1;
+        img {
+            position: relative;
+            top: 100px;
+            @include l-center;                
+        }
+    }
+}
+h2 {
+    color: $h2-color;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 70px;
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    background: url(../img/h2bg.png),url(../img/h2bg_2.png);
+    background-repeat: no-repeat,no-repeat;
+    background-position: left bottom, left 150px bottom 25px;
+    position: relative;
+}
+h3 {
+    font-size: 1.6em;
+    padding-left: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 70px 0 60px;
+    text-shadow: -1px 1px 1px $white-color;
+    @include bp_large {
+        padding-top: 85px;
+        padding-bottom: 10px;        
+    }
+}
+
+li {
+    list-style: none;    
+}
+
+a {
+    text-decoration: none;
+    transition: 0.4s;
+    opacity: 1;
+    color: $text-color;
+}
+a:hover {
+    opacity: 0.8;    
+}
+img {
+    vertical-align: bottom;
+}
+#wrapper {
+    margin: 0 auto;
+    overflow: hidden;
+    @include bp_xl {
+        width: 100%;
+    }
+}
+.gnav {
+    z-index: 2;
+    position: absolute;
+    top: 15px;
+    width: 100%;
+    max-width: 1000px;
+    @include l-center;
+    ul {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 0 auto;
+        li {
+            list-style: none;
+            transition: 0.2s;
+            opacity: 1;    
+            border-radius: 10px;  
+            margin: 0 5px 15px;  
+            text-align: center;
+            a {
+                display: block;
+                width: 150px;
+                height: 30px;
+                font-size: 1.2em;
+                color: rgb(31,45,56);
+                &:hover {
+                    color: #ffffff;
+                    opacity: 1;                    
+                }                
+            }           
+        }        
+    }
+    @include bp_xl {
+        display: none;        
+    }
+}
+main {
+    display: block;
+    margin: 0 auto 200px;
+    background-image: url(../img/main.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    width: 100%;
+    max-width: 1000px;
+    .main__container {
+        margin: 0 auto;
+    }    
+}
+.main__contents {
+    padding: 20px 15px 180px;
+    background: url(../img/nakajima_row1.png) no-repeat bottom right;
+    position: relative;
+    &:before {
+        position: absolute;
+        width: 95%;
+        height: 100%;
+        content: "";
+        background: url(../img/nakajima_row1.png) no-repeat top left;
+        z-index: -1; 
+        @include bp_large {
+            background: url(../img/nakajima_row1.png) top left / 160px 136px no-repeat ;
+            opacity: 0.5;            
+        } 
+        .nakajima__colum03 {
+            text-align: center;
+            padding-top: 50px;
+            a {
+                border-bottom: 1px solid $text-color;
+                color: $text-color;
+                &:hover {
+                    border-bottom: 1px solid $border-color;
+                    color: $border-color;                          
+                }                    
+            }
+        }    
+
+    }      
+}
+
+.nakajima__row {
+    display: flex;
+    width: 95%;
+    margin: 0 auto;
+    flex-wrap: wrap;    
+    justify-content: center;
+}
+.nakajima__colum01 {
+    width: 360px;
+    dt {
+        width: 100%;
+        height: 360px;
+        overflow: hidden;
+        border-radius: 180px;
+        border: 10px solid rgb(255,255,255);
+        box-shadow: 1px 1px 8px rgb(131, 131, 131);
+        box-sizing: border-box;
+        position: relative; 
+        img {
+            position: relative;
+            @include tl-center;            
+        } 
+        @include bp_small {
+            max-height: 300px;            
+        }      
+    }
+    dd {
+        padding: 15px 0 50px;
+        box-sizing: border-box;
+        font-size: 1.4rem;
+        margin: 0 auto;
+        line-height: 1.2;
+        text-align: center;        
+    } 
+    @include bp_small {
+        max-width: 300px;        
+    }   
+}
+
+footer {
+    position: relative;
+    background-image: url(../img/footer.png);
+    background-position: center bottom;
+    height: 220px;
+    text-align: center;
+    background-repeat: no-repeat;
+
+    .footer__nav {
+        margin-bottom: 30px;
+    }
+
+    .footer__nav ul {
+        display: flex;
+        width: 90%;
+        max-width: 700px;
+        margin: 0 auto;
+        justify-content: space-around;
+        position: relative;
+        li {
+            position: relative;
+            &:before {
+                background: url(../img/nakajima_footer_nav.png) no-repeat left 15px top;  
+                opacity: 0.6;  
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                transition: 0.3s; 
+                @include bp_large {
+                    background-position: left top;                     
+                } 
+                @include bp_mid {
+                    background-position: center center;                    
+                }              
+            }
+            &:hover:before {
+                opacity: 1;                
+            }
+            a {
+                font-size: 0.9em;
+                color: $text-light-color; 
+                display: block;
+                color: $text-color;
+                position: relative; 
+                padding: 8px 30px;
+                transition: 0.3s;
+                margin: 0 10px;
+                &:hover {
+                    color: $hover-color;
+                    opacity: 1;                     
+                }
+                i {
+                    margin-right: 5px;
+                    font-size: 1.4em;
+                    position: relative;
+                    bottom: -2px;                    
+                }
+                @include bp_large {
+                    font-size: 0.9em;
+                    padding: 8px 0 0 10px;                    
+                }
+                @include bp_mid {
+                    font-size: 0.8em;                    
+                }
+                @include bp_small {
+                    padding: 0;                   
+                }
+            }
+            @include bp_large {
+                padding: 8px 0;                
+            }           
+        }
+    }
+    img {
+        position: relative;
+        top: 0;
+        @include l-center;  
+        @include bp_xl {
+            width: 100%; 
+        }      
+    }
+    p {
+        padding-top: 20px;
+        small {
+            font-size: 0.7em;            
+        }        
+    }
+}
+.material-icons {
+    position: relative;
+    bottom: -5px;
+}
+.required {
+    font-size: 0.8em;
+
+}
+.go__top {
+    width: 95%;
+    margin: 0 auto 60px;
+    text-align: right; 
+    padding-top: 30px;   
+    position: relative;
+    a {
+        color: $hover-color;  
+        transition: 0.4s; 
+        font-size: 1em;
+        &:hover {
+            color: $h4-color;
+            opacity: 1;
+            position: relative;
+        
+        }
+    }
+    @include bp_large {
+        padding-bottom: 0;        
+    }
+}
+
+//////////////////////
+
+/* ページ紹介 */
+
+//////////////////////
+.main__contener__intro {
+    width: 95%;
+    margin: 0 auto 80px;
+    figure {
+        margin: 0 auto;
+        height: 400px;
+        overflow: hidden;
+        position: relative;
+        &:after {
+            content: "";
+            width: calc(100% - 20px);
+            height: calc(100% - 20px);
+            border: 1px solid rgb(255,255,255);
+            top: 10px;
+            left: 10px;
+            position: absolute;
+            box-shadow: 1px 1px 4px $shadow-color;            
+        }
+        img {
+            position: absolute;
+            top: 70%;
+            left: 47%;
+            transform: translate(-50%,-50%);            
+        } 
+    
+    }
+    p {
+        padding-top: 30px;
+        width: 90%;
+        margin: 0 auto;            
+    }  
+    dt {
+        @include bp_small {
+            height: 250px;
+        }
+        img {
+            @include bp_small {
+                height: 350px;                
+            }
+        }
+    }
+}
+
+
+
+//////////////////////
+
+/* ページ内ナビ */
+
+//////////////////////
+.nakajima__innernav {
+    display: flex;
+    width: 700px;
+    margin: 0 auto 100px;
+    justify-content: space-around;
+    li {
+        z-index: 10;
+        position: relative;
+        transition: 0.4s; 
+        background-position: center bottom 10px;
+        background-repeat: no-repeat;
+        width: calc(100%/5);
+        border-left: 1px solid $borderg-color;
+        &:last-child {
+            border-right: 1px solid $borderg-color; 
+            @include bp_large {
+                border-right: none;   
+                border-bottom: 1px solid $borderg-color;                
+            }           
+        }
+        &:hover {
+            background-color: $ivory-color;            
+        }
+        &:nth-child(1) {
+            background-image: url(../img/page_nav01.png);
+            a:before {
+                content: "ゆきあかり"; 
+            }
+        }
+        &:nth-child(2) {
+            background-image: url(../img/page_nav02.png);
+            a:before {
+                content: "ギャラリー"; 
+            }
+        }  
+        &:nth-child(3) {
+            background-image: url(../img/page_nav03.png);
+            a:before {
+                content: "アクセス"; 
+            }
+        }  
+        &:nth-child(4) {
+            background-image: url(../img/page_nav04.png);
+            a:before {
+                content: "宿泊施設"; 
+            }
+        }  
+        &:nth-child(5) {
+            background-image: url(../img/page_nav05.png);
+            a:before {
+                content: "お問合せ"; 
+            }
+        }
+        a {
+            display: inline-block;
+            width: 100%;
+            height: 140px;
+            transition: 0.4s;
+            text-indent: 10px; 
+            position: relative; 
+            font-size: 0.8em;
+            color: $text-light-color;  
+            @include bp_mid {
+                font-size: 0.8em;                
+            }
+            p {
+                @include bp_mid {
+                    font-size: 0.8em;
+                }
+
+            }
+            &:hover {
+                color: $hover-color;
+                opacity: 1;                 
+            }
+            i {
+                display: block;
+                font-size: 3em;
+                padding-bottom: 5px; 
+                @include bp_mid {
+                    font-size: 2.4em;                    
+                }               
+            } 
+            @include bp_large {
+                font-size: 0.9em;
+                line-height: 2;
+                width: 100%;
+                left: auto;
+                transform: translateX(0);
+                padding-right: 0;
+                padding-bottom: 30px;
+                height: auto;
+                padding-top: 15px;                
+            }       
+        }  
+        a:before {
+            transition: 0.4s; 
+            width: calc(50% + 0.7em);
+            height: 100%;
+            top: 0;
+            left: 0;
+            position: absolute;
+            writing-mode: vertical-rl;  
+            @include bp_large {
+                writing-mode: horizontal-tb; 
+                width: 100%;                
+            }          
+        }
+        @include bp_large {
+            writing-mode: horizontal-tb;   
+            border-left: none;
+            text-align: center;
+            border-top: 1px solid rgb(183, 186, 189);
+            width: 100%;
+            background-position: center bottom 3px;
+            background-size: 25px;
+            margin: 0 auto;            
+        } 
+        @include bp_small {
+            box-sizing: border-box;            
+        }     
+    }
+    @include bp_large {
+        display: block;
+        width: 80%;
+        max-width: 450px;        
+    }
+    @include bp_small {
+        width: 90%;
+        box-sizing: border-box;
+    }
+}
+
+
+
+//////////////////////
+
+/* コンセプト */
+
+//////////////////////
+.nakajima__colum02 {
+    width:  calc(100% - 400px);
+    margin: 20px;
+    box-sizing: border-box; 
+    p {
+        margin-bottom: 20px;        
+    }
+    @include bp_xl {
+        min-width: 80%;        
+    } 
+    @include bp_large {
+        width: 90%;        
+    }
+    @include bp_small {
+        min-width: 95%;        
+    }
+}
+
+
+
+//////////////////////
+
+/* ギャラリー */
+
+//////////////////////
+.main__contents {
+    &:nth-of-type(2) {
+        .nakajima__row {
+            justify-content: center;     
+        } 
+        .nakajima__colum01 {
+            width: 250px;
+            height: 250px;
+            box-sizing: border-box;
+            position: relative;
+            h4 {
+                margin-bottom: 5px;
+                color: $h2-color;                    
+            }
+            margin: 10px 20px 110px;
+            dt {
+                width: 250px;
+                height: 250px;                    
+            }
+            dd {
+                text-align: center;                    
+            }
+        }
+    }
+}
+//////////////////////
+
+/* アクセス */
+
+//////////////////////
+.nakajima__row {
+    table {
+        display: table;
+        margin-right: 15px;
+        background: $white-rgba7-color;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+        tr:nth-of-type(7) td {
+            padding: 30px 0;
+            text-align: center;            
+        }
+        tr th {
+            text-align-last: left;
+            padding-left: 10px;            
+        }
+        tr td {
+            padding: 0 0 15px 15px;            
+        }                    
+    }
+    iframe {
+        width: calc(100% - 335px);
+        box-sizing: border-box;
+        margin-bottom: 15px; 
+        @include bp_large {
+            width: 95%;            
+        }                   
+    }
+}
+
+
+//////////////////////
+
+/* 周辺情報 */
+
+//////////////////////
+.main__contents:nth-of-type(5) {
+    padding: 20px 15px 120px;
+
+}
+.nakajima__grid {
+    display:grid;
+	grid-template-rows:200px 200px;
+    grid-template-columns:32% 33% 32%;
+    width: 95%;
+    margin: 0 auto;
+    gap: 15px;
+    box-sizing: border-box;
+    @include bp_xl {
+        grid-template-rows:150px 150px;
+    }
+    @include bp_mid {
+        grid-template-columns:48% 48%;
+        width: 100%;
+        grid-template-rows:150px 150px 150px;        
+    }
+}
+.nakajima__grid__item {
+    text-align: center; 
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat; 
+    &:nth-child(1) {
+        background-image: url(../img/nakajima_park.jpg);        
+    } 
+    &:nth-child(2) {
+        background-image: url(../img/nakajima_north.jpg);        
+    } 
+    &:nth-child(3) {
+        background-image: url(../img/nakajima_resol.jpg);        
+    } 
+    &:nth-child(4) {
+        background-image: url(../img/nakajima_quintessa.jpg);        
+    } 
+    &:nth-child(5) {
+        background-image: url(../img/nakajima_unwind.jpg);        
+    } 
+    &:nth-child(6) {
+        background-image: url(../img/nakajima_vessel.jpg);        
+    }   
+    a {
+        display: grid;
+        padding: 20px 10px 10px;
+        line-height: 1.2;
+        height: calc(100% - 30px);
+        transition: 0.3s;
+        border-radius: 8px; 
+        background: linear-gradient(to bottom,rgba(255,255,255,0.9),rgba(255,255,255,0)) bottom right;   
+        color: $text-color; 
+        &:hover {
+            background: url(../img/nakajima_snow1.png) rgba(0,0,0,0.5) bottom right no-repeat;
+            color: $white-color;
+            font-weight: bold;            
+        }   
+    }   
+}
+
+
+//////////////////////
+
+/* コンタクト */
+
+//////////////////////
+#contact form {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 30px 40px;
+    border-radius: 10px;
+    position: relative;
+    @include bp_mid {
+        box-sizing: border-box;
+        width: 95%;        
+    }
+    &:before {
+        position: absolute;
+        background: rgb(240,240,240) url(../img/nakajima_row1.png) bottom 120px left 30px no-repeat;
+        transform: scale(-1,-1);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 10px;
+        content: "";
+        z-index: -1; 
+        @include bp_small {
+            background: $gray-rgba5-color url() bottom 40px right 30px no-repeat ;             
+        }       
+    }
+    dl {
+        dt {
+        font-size: 1.2em;
+        position: relative;        
+        }
+        dd {
+            padding: 0 0 25px 20px;
+            @include bp_mid {
+                padding: 0 0 25px 10px;                
+            }
+            &:nth-of-type(3) {
+                padding: 0 20px 25px 20px;  
+                @include bp_mid {
+                    padding: 0 10px 25px 10px;
+                }              
+            }           
+        }
+    }
+    .shubetsu {
+        margin-left: 10px;
+    }
+    .email,
+    .message {
+        border: 1px solid $borderg-color;
+        border-radius: 5px;
+        padding-left: 8px;
+        background: $white-rgba7-color;  
+        color: $text-color; 
+        @include bp_mid {
+            width: calc(100% - 30px);            
+        }      
+    }
+    .email {
+        width: 300px;    
+        line-height: 2.5;
+        font: inherit;      
+    }
+    .message {
+        padding: 8px 15px;
+        font: inherit;
+        width: calc(100% - 30px);        
+    }
+    label {
+        display: block;
+    }
+    button {
+        margin-left: 20px;
+        height: 35px;
+        width: 180px;
+        border: none;
+        border-radius: 5px;
+        font: 1em "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+        cursor: pointer;
+        position: relative;
+        transition: 0.2s;
+        z-index: 1;
+        background:rgb(163, 188, 218);
+        color: $text-color;
+        &:hover {
+            color: $white-color;
+            :before {
+                width: 100%;
+            }
+        }
+        &:before {
+            background: $hover-color;
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 0;
+            transition: 0.2s;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            border-radius: 4px;            
+        }
+        @include bp_large {
+            display: block;
+            margin: 0 auto;            
+        }
+        @include bp_small {
+            display: block;
+            margin: 0 auto;            
+        }       
+    }
+    textarea::placeholder {
+        font: 1em "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+        cursor: pointer; 
+    }
+    @include bp_small {
+        padding: 12px 15px 30px;        
+    }
+}
+
