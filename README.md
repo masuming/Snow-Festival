@@ -1,8 +1,8 @@
 ![header](https://user-images.githubusercontent.com/70561410/116546730-ede82000-a92c-11eb-95e0-f9c1e87d601e.png)
 
 # Snow-Festival
-「雪まつりメモリアル」サイト
-https://masuming.ivory.ne.jp/snowfes/nakajima.html">→https://masuming.ivory.ne.jp/snowfes/nakajima.html</a>
+「雪まつりメモリアル」サイト<br>
+<a href="https://masuming.ivory.ne.jp/snowfes/nakajima.html">→https://masuming.ivory.ne.jp/snowfes/nakajima.html</a>
 課題製作で「さっぽろ雪まつり」の架空Websiteを作成しました。
 5人でチームを編成し、プロジェクトリーダーの元、ページの割り振りや全体のトーン、サイズ、フォントなど詳細を話し合った後、製作に着手。
 私は中島公園のページと、見出し／セクションの共通背景デザインを担当しました。
