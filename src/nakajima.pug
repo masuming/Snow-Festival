@@ -1,0 +1,165 @@
+extends _layout
+block title 
+    title さっぽろ雪まつり | 中島公園会場
+block pageContent
+
+    .wrapper
+        //ヘッダー
+        include _header
+
+        //ハンバーガーメニュー
+        include _hamburger
+
+        //メインコンテンツ
+        main 
+            div.main__container
+                section#main__contener
+                    h2 中島公園
+
+                    //ページ紹介
+                    div.main__contener__intro
+                        figure 
+                            img(src="img/nakajima_heroimg02.jpg" alt="nakajima_heroimg02")
+                        p.main__txt 札幌駅から地下鉄南北線で３駅、とアクセス抜群の「中島公園」。<br>市内随一の歓楽街すすきのに隣接しながらも、平和でのどかな空気が流れています。<br>鴨々川、菖蒲池といった水辺、樹齢数百年にもなる木々といった四季折々の穏やかな変化を遂げる自然の公園であると同時に、音楽ホール・天文台・文学館などの文化施設も充実。重要文化財の「八窓庵」や「豊平館」を擁し、歴史の流れを感じられる風情も大きな魅力です。
+
+                    //ページ内ナビ
+                    ul.nakajima__innernav
+                        li: a(href="#concept")
+                        li: a(href="#gallery")
+                        li: a(href="#access")
+                        li: a(href="#info")
+                        li: a(href="#contact")
+
+                    //コンセプトセクション
+                    section#concept.main__contents
+                        h3 ゆきあかりin中島公園
+                        div.nakajima__row
+                            dl.nakajima__colum01
+                                dt: img(src="img/nakajima_img_l01.jpg" alt="nakajima_img_l01")
+                                dd 冬の札幌にゆらゆら煌めく優しい灯
+
+                            div.nakajima__colum02
+                                p 2020年に第14回を迎えた「ゆきあかりin中島公園」。
+                                p 自然豊かな憩いの場として市民に愛されている「中島公園」で、雪まつり期間中に開催される人気のイベントです。
+                                p 雪化粧をした園内は、柔らかなキャンドルのあかりに包まれ、幻想的な世界を楽しめます。来場者が紙コップに願い事を書いて、オリジナルのランタンを作れるコーナー（参加無料）もあります。
+                                p 2021年は、新型コロナウイルスの感染拡大防止対策として会場展開を見送ることとなりました。オンライン開催となった今年は例年開催の模様を振り返ります。
+                                p 来る2022年、みなさまとお会いできることを楽しみにしています。
+
+                    //ページトップに戻るボタン
+                    include _pageTop
+
+                    //ギャラリーセクション
+                    section#gallery.main__contents
+                        h3 幻想的な灯りがやさしく彩る
+                        div.nakajima__row
+                            dl.nakajima__colum01
+                                dt: img(src="img/nakajima_img02.jpg" alt="nakajima_img02")
+                                dd: h4 第14回開催／令和2年
+                                    p 地元住民による手作りの滑り台                        
+                            dl.nakajima__colum01
+                                dt: img(src="img/nakajima_img03.jpg" alt="nakajima_img03")
+                                dd: h4 第13回開催／平成31年
+                                    p ペットボトルキャンドル
+                            dl.nakajima__colum01
+                                dt: img(src="img/nakajima_img04.jpg" alt="nakajima_img04")
+                                dd: h4 第12回開催／平成30年
+                                    p 無数のランタンがどこまでも続く
+                            dl.nakajima__colum01
+                                dt: img(src="img/nakajima_img05.jpg" alt="nakajima_img05")
+                                dd: h4 第11回開催／平成28年
+                                    p 9条広場 光のピラミッド
+                            dl.nakajima__colum01
+                                dt: img(src="img/nakajima_img06.jpg" alt="nakajima_img06")
+                                dd: h4 第10回開催／平成28年
+                                    p ぬくもりのあるスノーキャンドル
+                            dl.nakajima__colum01
+                                dt: img(src="img/nakajima_img07.jpg" alt="nakajima_img07")
+                                dd: h4 第9回開催／平成27年
+                                    p ハート型のアイスキャンドル
+                        p.nakajima__colum03
+                            a(href="https://www.sapporo.travel/sightseeing.photolibrary/?s=%E5%86%AC&catnum%5B%5D=13&catnum%5B%5D=14&season%5B%5D=34&area%5B%5D=6" target="blank") 
+                                i.fas.fa-camera
+                                .
+                                    中島公園の冬の風景をもっと見る
+
+                    //ページトップに戻るボタン
+                    include _pageTop
+
+
+                    //アクセスセクション
+                    section#access.main__contents
+                        h3 会場へのアクセス
+                        div.nakajima__row
+                            table.nakajima__access02
+                                tr: th 住所
+                                tr: td 〒064-0931 札幌市中央区中島公園1
+                                tr: th 交通機関
+                                tr: td 〒064-0931 札幌市中央区中島公園1
+                                tr: th TEL／FAX
+                                tr: td (011)511-3924／(011)511-0437
+                                tr: th 住所
+                                tr: td: img( src="img/nakajima_access_img01.png" alt="nakajima_access_img01")
+                            . 
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d5831.705857459954!2d141.34970177585984!3d43.04452581658724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x5f0b2a23be780609%3A0x3ab2ac5a26715d24!2z44CSMDY0LTA5MzEg5YyX5rW36YGT5pyt5bmM5biC5Lit5aSu5Yy65Lit5bO25YWs5ZyS77yRIOS4reWztuWFrOWckg!3m2!1d43.044488799999996!2d141.3544147!5e0!3m2!1sja!2sjp!4v1610078603122!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="nakajima__access01"></iframe>
+
+
+                    //ページトップに戻るボタン
+                    include _pageTop
+
+                    //周辺情報セクション
+                    section#info.main__contents
+                        h3 周辺の宿泊施設
+                        div.nakajima__grid
+                            div.nakajima__grid__item
+                                a(href="http://www.park1964.com/" target="black") 札幌パークホテル                      
+                            div.nakajima__grid__item
+                                a(href="http://www.northcity.or.jp/" target="black") ホテルノースシティ 
+                            div.nakajima__grid__item
+                                a(href="https://www.resol-sapporo-n.com/" target="black") ホテルリソル札幌中島公園 
+                            div.nakajima__grid__item
+                                a(href="https://quintessahotels.com/sapporo/" target="black") クインテッサホテル札幌                 
+                            div.nakajima__grid__item
+                                a(href="https://www.hotel-unwind.com/" target="black") UNWIND HOTEL 
+                            div.nakajima__grid__item
+                                a(href="https://www.vessel-hotel.jp/inn/sapporo/" target="black") ベッセルイン札幌 中島公園 
+
+                        p.nakajima__colum03
+                            a(href="https://yado.knt.co.jp/areamap/1010105300011/" target="blank")
+                                i.fas.fa-hotel
+                                .
+                                    ホテル一覧から探す
+
+                    //ページトップに戻るボタン
+                    include _pageTop
+
+
+
+                    //コンタクトセクション
+                    section#contact.main__contents
+                        h3 お問い合わせ
+                        form(action="" method="POST")
+                            dl: dt お問い合わせ種別
+                                dd
+                                    label(for="setsuzo")
+                                        input.shubetsu#setsuzo(type="radio" name="contact" value="setsuzo")
+                                        | 市民雪像製作申し込み
+                                    label(for="voluntee")
+                                        input.shubetsu#voluntee(type="radio" name="contact" value="voluntee")
+                                        | 雪まつりボランティア申し込み
+                                    label(for="question")
+                                        input.shubetsu#question(type="radio" name="contact" value="question")
+                                        | お問い合わせ
+                                dt メールアドレス
+                                    span.required （必須）
+                                dd: input(type="email" name="email" class="email")
+                                dt お問い合わせ内容
+                                dd: textarea(name="message" class ="message" id="" cols="50" rows="10" maxlength="500" placeholder="500文字以内でご記入ください")
+                            button(type="submit" class="btn")  送信する
+                                i.far.fa-paper-plane
+
+                    //ページトップに戻るボタン
+                    include _pageTop
+
+
+
+
