@@ -1,0 +1,11 @@
+<script>
+    $(function(){
+        $('a[href^="#"]').on({"click":(function() {
+            let href= $(this).attr("href");
+            let target = $(href == "#" || href == "" ? 'html' : href);
+            let position = target.offset().top;
+            $('body,html').animate({scrollTop:position}, 500);
+        }),
+        });
+    })
+</script>
